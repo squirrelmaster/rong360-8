@@ -33,7 +33,7 @@ def extract_browse(browse_history, loan_time):
     gb = d.groupby('userid', as_index=False)
     x1 = gb['browse_data'].agg(
         {'b_browse_data_sum': np.sum, 'b_browse_data_mean': np.mean, 'b_browse_data_max': np.max,
-         'b_browse_data_min': np.min, 'b_browse_data_std': np.std,
+         'b_browse_data_min': np.min, 'b_browse_data_std': np.std,'b_browse_data_var': np.var,
          'b_browse_data_median': np.median})
     x2 = gb['browse_tag'].agg({'b_browse_tag_sum': np.sum, 'b_browse_tag_mean': np.mean, 'b_browse_tag_max': np.max,
                                'b_browse_tag_min': np.min, 'b_browse_tag_std': np.std,
@@ -87,7 +87,7 @@ def extract_browse(browse_history, loan_time):
     gb = d.groupby('userid', as_index=False)
     x1 = gb['browse_data'].agg(
         {'a_browse_data_sum': np.sum, 'a_browse_data_mean': np.mean, 'a_browse_data_max': np.max,
-         'a_browse_data_min': np.min, 'a_browse_data_std': np.std,
+         'a_browse_data_min': np.min, 'a_browse_data_std': np.std,'a_browse_data_var': np.var,
          'a_browse_data_median': np.median})
     x2 = gb['browse_tag'].agg({'a_browse_tag_sum': np.sum, 'a_browse_tag_mean': np.mean, 'a_browse_tag_max': np.max,
                                'a_browse_tag_min': np.min, 'a_browse_tag_std': np.std,
